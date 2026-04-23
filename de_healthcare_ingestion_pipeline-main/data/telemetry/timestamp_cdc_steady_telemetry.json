@@ -1,0 +1,16 @@
+{
+  "job_id": "job_timestamp_cdc_vitals",
+  "source_id": "simulated_vitals_stream",
+  "dataset_id": "vitals_stream_dataset",
+  "execution_mode": "CDC_CONTINUOUS",
+  "records_ingested": 299,
+  "records_failed": 1,
+  "ingestion_latency_seconds": 40701348.60280496,
+  "processing_lag_seconds": 8814004.975661,
+  "throughput_rps": 1340.7352441368528,
+  "file_count_per_partition": null,
+  "snapshot_count": null,
+  "compaction_lag_seconds": null,
+  "started_at": "2026-04-11T23:27:22.753212+00:00",
+  "ended_at": "2026-04-11T23:27:22.976234+00:00"
+}

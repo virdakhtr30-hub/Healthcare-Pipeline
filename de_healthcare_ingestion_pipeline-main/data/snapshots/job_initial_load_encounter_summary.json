@@ -1,0 +1,17 @@
+{
+  "job_id": "job_initial_load_encounter",
+  "source_id": "encounter_master",
+  "dataset_id": "encounter_dataset",
+  "execution_mode": "BATCH",
+  "source_type": "file",
+  "change_capture_mode": "FULL_SNAPSHOT",
+  "input_path": "/opt/project/data/input/encounter_master.csv",
+  "accepted_output_path": "/opt/project/data/accepted/encounter_master_accepted.jsonl",
+  "quarantine_output_path": "/opt/project/data/quarantine/encounter_master_quarantine.csv",
+  "error_report_path": "/opt/project/data/snapshots/encounter_master_error_report.csv",
+  "records_total_input": 10000,
+  "records_ingested": 9963,
+  "records_quarantined": 37,
+  "records_rejected": 0,
+  "finished_at": "2026-04-12T01:08:45.324364+00:00"
+}

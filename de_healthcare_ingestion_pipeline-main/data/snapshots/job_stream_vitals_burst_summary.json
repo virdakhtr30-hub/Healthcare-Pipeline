@@ -1,0 +1,15 @@
+{
+  "job_id": "job_stream_vitals_burst",
+  "scenario": "burst_stream",
+  "source_id": "simulated_vitals_stream",
+  "dataset_id": "vitals_stream_dataset",
+  "execution_mode": "STREAMING",
+  "burst_size": 5000,
+  "burst_window_seconds": 1,
+  "pause_seconds": 3,
+  "records_total_input": 5000,
+  "records_ingested": 4979,
+  "records_quarantined": 21,
+  "records_failed": 21,
+  "finished_at": "2026-04-12T01:10:22.301559+00:00"
+}

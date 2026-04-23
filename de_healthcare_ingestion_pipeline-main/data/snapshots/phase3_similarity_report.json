@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-04-12T01:08:31.248457+00:00",
+  "datasets": {
+    "encounter_master": {
+      "input_rows": 10000,
+      "synthetic_rows": 20000,
+      "profile_path": "/opt/project/data/profiled/encounter_master_profile.json",
+      "synthetic_path": "/opt/project/data/synthetic/encounter_master_synthetic.csv",
+      "similarity_metrics": {
+        "real_rows": 10000,
+        "synthetic_rows": 20000,
+        "numeric_kl_divergence": {
+          "age": 0.0002803368461061614,
+          "los_days": 0.0006875618085339067
+        }
+      }
+    },
+    "diagnosis_events": {
+      "input_rows": 18996,
+      "synthetic_rows": 37992,
+      "profile_path": "/opt/project/data/profiled/diagnosis_events_profile.json",
+      "synthetic_path": "/opt/project/data/synthetic/diagnosis_events_synthetic.csv",
+      "similarity_metrics": {
+        "real_rows": 18996,
+        "synthetic_rows": 37992,
+        "numeric_kl_divergence": {
+          "diag_sequence": 3.27404310638526e-05
+        }
+      }
+    },
+    "lab_results": {
+      "input_rows": 57170,
+      "synthetic_rows": 114340,
+      "profile_path": "/opt/project/data/profiled/lab_results_profile.json",
+      "synthetic_path": "/opt/project/data/synthetic/lab_results_synthetic.csv",
+      "similarity_metrics": {
+        "real_rows": 57170,
+        "synthetic_rows": 114340,
+        "numeric_kl_divergence": {
+          "result_value": 9.703704616508707e-07
+        }
+      }
+    },
+    "mortality_registry": {
+      "input_rows": 202,
+      "synthetic_rows": 404,
+      "profile_path": "/opt/project/data/profiled/mortality_registry_profile.json",
+      "synthetic_path": "/opt/project/data/synthetic/mortality_registry_synthetic.csv",
+      "similarity_metrics": {
+        "real_rows": 202,
+        "synthetic_rows": 404,
+        "numeric_kl_divergence": {}
+      }
+    },
+    "simulated_vitals_stream": {
+      "input_rows": 118957,
+      "synthetic_rows": 237914,
+      "profile_path": "/opt/project/data/profiled/simulated_vitals_stream_profile.json",
+      "synthetic_path": "/opt/project/data/synthetic/simulated_vitals_stream_synthetic.csv",
+      "similarity_metrics": {
+        "real_rows": 118957,
+        "synthetic_rows": 237914,
+        "numeric_kl_divergence": {
+          "heart_rate": 4.910494736537337e-05,
+          "respiratory_rate": 0.0004241809806107324,
+          "spo2": 6.0922848714942445e-05,
+          "sbp": 8.043294654829481e-05,
+          "dbp": 0.00014771871232951295
+        }
+      }
+    }
+  }
+}

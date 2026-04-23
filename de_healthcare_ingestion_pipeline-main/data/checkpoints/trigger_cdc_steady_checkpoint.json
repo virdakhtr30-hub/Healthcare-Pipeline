@@ -1,0 +1,6 @@
+{
+  "last_offset": 299,
+  "last_watermark": "2026-04-11T23:27:23.359014+00:00",
+  "saved_at": "2026-04-11T23:27:23.359033+00:00",
+  "strategy": "trigger_cdc"
+}

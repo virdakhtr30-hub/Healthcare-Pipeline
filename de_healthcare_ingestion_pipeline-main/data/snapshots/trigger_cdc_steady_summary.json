@@ -1,0 +1,7 @@
+{
+  "job_id": "job_trigger_cdc",
+  "strategy": "trigger_cdc",
+  "message": "No new trigger events found.",
+  "last_offset": 299,
+  "finished_at": "2026-04-12T01:10:24.583325+00:00"
+}

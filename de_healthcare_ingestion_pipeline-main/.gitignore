@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv/
+
+# OS / editor
+.DS_Store
+.vscode/
+
+# Local env files
+.env
+airflow_local/.env
+
+# Airflow runtime logs
+airflow_local/logs/
+
+# Temp files
+*.tmp
+
+# Jupyter / checkpoints
+.ipynb_checkpoints/
+
+# Optional local cache
+.cache/__pycache__/
+*.pyc

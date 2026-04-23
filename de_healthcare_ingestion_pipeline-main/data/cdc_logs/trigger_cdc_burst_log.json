@@ -1,0 +1,15 @@
+{
+  "job_id": "job_trigger_cdc",
+  "strategy": "trigger_cdc",
+  "source_id": "simulated_vitals_stream",
+  "previous_offset": -1,
+  "new_offset": 4999,
+  "events_read": 5000,
+  "inserts": 3032,
+  "updates": 1448,
+  "deletes": 520,
+  "events_emitted": 5000,
+  "committed": 5000,
+  "quarantined": 16,
+  "run_at": "2026-04-11T23:27:38.033516+00:00"
+}

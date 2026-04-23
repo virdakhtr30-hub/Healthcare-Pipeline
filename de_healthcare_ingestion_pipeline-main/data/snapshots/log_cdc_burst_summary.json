@@ -1,0 +1,7 @@
+{
+  "job_id": "job_log_cdc",
+  "strategy": "log_cdc",
+  "message": "Koi naya WAL entry nahi mila",
+  "last_log_position": 9999,
+  "finished_at": "2026-04-12T01:10:25.130849+00:00"
+}

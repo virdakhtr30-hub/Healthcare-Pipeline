@@ -1,0 +1,13 @@
+{
+  "job_id": "job_timestamp_cdc_vitals",
+  "strategy": "timestamp_cdc",
+  "source_id": "simulated_vitals_stream",
+  "watermark_column": "source_timestamp",
+  "previous_watermark": null,
+  "new_watermark": "2026-01-10 06:15:11+00:00",
+  "candidate_rows": 5000,
+  "events_emitted": 4979,
+  "quarantined": 21,
+  "committed": 4979,
+  "run_at": "2026-04-11T23:27:32.598348+00:00"
+}

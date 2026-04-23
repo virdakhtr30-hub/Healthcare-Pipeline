@@ -1,0 +1,159 @@
+encounter_contract:
+  contract_id: encounter_contract
+  required_fields:
+    - encounter_id
+    - patient_id
+    - admit_datetime
+    - age
+    - gender
+    - expired_flag
+    - last_updated_at
+  nullable_fields:
+    - discharge_datetime
+    - discharge_disposition
+    - location
+  type_constraints:
+    encounter_id: str
+    patient_id: str
+    admit_datetime: datetime
+    discharge_datetime: datetime
+    age: int
+    gender: str
+    admission_type: str
+    admission_service: str
+    discharge_disposition: str
+    expired_flag: bool
+    los_days: float
+    location: str
+    last_updated_at: datetime
+  unit_constraints: {}
+  enumerations:
+    gender: ["M", "F", "UNKNOWN", "OTHER"]
+    admission_type: ["EMERGENCY", "URGENT", "ELECTIVE"]
+    discharge_disposition: ["HOME", "TRANSFER", "REHAB", "LAMA", "EXPIRED"]
+    location: ["ICU_1", "ICU_2", "WARD_A", "WARD_B", "WARD_C", "STEPDOWN_1"]
+  violation_policy: AUTO_COERCE
+
+diagnosis_contract:
+  contract_id: diagnosis_contract
+  required_fields:
+    - diagnosis_id
+    - encounter_id
+    - diag_sequence
+    - diag_code
+    - diag_text
+    - icd_type
+    - coding_timestamp
+    - last_updated_at
+  nullable_fields: []
+  type_constraints:
+    diagnosis_id: str
+    encounter_id: str
+    diag_sequence: int
+    diag_code: str
+    diag_text: str
+    icd_type: str
+    coding_timestamp: datetime
+    last_updated_at: datetime
+  unit_constraints: {}
+  enumerations:
+    icd_type: ["ICD10"]
+  violation_policy: AUTO_COERCE
+
+lab_results_contract:
+  contract_id: lab_results_contract
+  required_fields:
+    - lab_result_id
+    - encounter_id
+    - patient_id
+    - result_timestamp
+    - test_name
+    - result_value
+    - unit
+    - last_updated_at
+  nullable_fields:
+    - normal_range
+    - result_comment
+  type_constraints:
+    lab_result_id: str
+    encounter_id: str
+    patient_id: str
+    result_timestamp: datetime
+    test_name: str
+    result_value: float
+    unit: str
+    normal_range: str
+    result_comment: str
+    last_updated_at: datetime
+  unit_constraints:
+    Hemoglobin: ["g/dL"]
+    Potassium: ["mmol/L"]
+    WBC: ["10^9/L"]
+    Creatinine: ["mg/dL"]
+    Lactate: ["mmol/L"]
+  enumerations: {}
+  violation_policy: QUARANTINE
+
+mortality_contract:
+  contract_id: mortality_contract
+  required_fields:
+    - death_record_id
+    - patient_id
+    - encounter_id
+    - death_datetime
+    - cause_of_death
+    - service
+    - location
+    - last_updated_at
+  nullable_fields:
+    - doctor
+  type_constraints:
+    death_record_id: str
+    patient_id: str
+    encounter_id: str
+    death_datetime: datetime
+    cause_of_death: str
+    service: str
+    doctor: str
+    location: str
+    last_updated_at: datetime
+  unit_constraints: {}
+  enumerations:
+    service: ["MEDICINE", "PULMONOLOGY", "ICU", "NEPHROLOGY", "CARDIOLOGY"]
+    location: ["ICU_1", "ICU_2", "WARD_A", "WARD_B", "WARD_C", "STEPDOWN_1"]
+  violation_policy: AUTO_COERCE
+
+vitals_stream_contract:
+  contract_id: vitals_stream_contract
+  required_fields:
+    - event_id
+    - encounter_id
+    - event_timestamp
+    - heart_rate
+    - respiratory_rate
+    - spo2
+    - sbp
+    - dbp
+    - signal_quality
+    - device_status
+    - source_timestamp
+    - last_updated_at
+  nullable_fields: []
+  type_constraints:
+    event_id: str
+    encounter_id: str
+    event_timestamp: datetime
+    heart_rate: float
+    respiratory_rate: float
+    spo2: float
+    sbp: float
+    dbp: float
+    signal_quality: str
+    device_status: str
+    source_timestamp: datetime
+    last_updated_at: datetime
+  unit_constraints: {}
+  enumerations:
+    signal_quality: ["GOOD", "FAIR", "POOR"]
+    device_status: ["ACTIVE", "DELAYED", "DROPPED"]
+  violation_policy: AUTO_COERCE

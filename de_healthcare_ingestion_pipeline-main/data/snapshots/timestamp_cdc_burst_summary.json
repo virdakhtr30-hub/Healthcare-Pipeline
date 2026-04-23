@@ -1,0 +1,7 @@
+{
+  "job_id": "job_timestamp_cdc_vitals",
+  "strategy": "timestamp_cdc",
+  "message": "No new rows found beyond watermark.",
+  "last_watermark": "2026-01-10 06:15:11+00:00",
+  "finished_at": "2026-04-12T01:10:24.625877+00:00"
+}

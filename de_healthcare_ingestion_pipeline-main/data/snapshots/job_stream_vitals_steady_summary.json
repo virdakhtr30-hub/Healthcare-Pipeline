@@ -1,0 +1,14 @@
+{
+  "job_id": "job_stream_vitals_steady",
+  "scenario": "steady_stream",
+  "source_id": "simulated_vitals_stream",
+  "dataset_id": "vitals_stream_dataset",
+  "execution_mode": "STREAMING",
+  "rate_per_sec": 10,
+  "duration_seconds": 30,
+  "records_total_input": 300,
+  "records_ingested": 299,
+  "records_quarantined": 1,
+  "records_failed": 1,
+  "finished_at": "2026-04-12T01:10:16.147747+00:00"
+}

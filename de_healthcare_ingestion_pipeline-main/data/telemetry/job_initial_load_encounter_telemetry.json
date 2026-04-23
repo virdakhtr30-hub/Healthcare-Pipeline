@@ -1,0 +1,16 @@
+{
+  "job_id": "job_initial_load_encounter",
+  "source_id": "encounter_master",
+  "dataset_id": "encounter_dataset",
+  "execution_mode": "BATCH",
+  "records_ingested": 9963,
+  "records_failed": 37,
+  "ingestion_latency_seconds": 39947616.66672441,
+  "processing_lag_seconds": 6402371.650101,
+  "throughput_rps": 2571.4607596527617,
+  "file_count_per_partition": null,
+  "snapshot_count": null,
+  "compaction_lag_seconds": null,
+  "started_at": "2026-04-12T01:08:41.435335+00:00",
+  "ended_at": "2026-04-12T01:08:45.309792+00:00"
+}

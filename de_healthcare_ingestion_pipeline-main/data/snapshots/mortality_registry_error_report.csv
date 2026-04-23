@@ -1,0 +1,16 @@
+row_index,column,error_type,message
+66,death_datetime,null_required,Required field 'death_datetime' is null.
+31,cause_of_death,null_required,Required field 'cause_of_death' is null.
+35,cause_of_death,null_required,Required field 'cause_of_death' is null.
+47,cause_of_death,null_required,Required field 'cause_of_death' is null.
+54,cause_of_death,null_required,Required field 'cause_of_death' is null.
+84,cause_of_death,null_required,Required field 'cause_of_death' is null.
+93,cause_of_death,null_required,Required field 'cause_of_death' is null.
+138,cause_of_death,null_required,Required field 'cause_of_death' is null.
+164,cause_of_death,null_required,Required field 'cause_of_death' is null.
+166,cause_of_death,null_required,Required field 'cause_of_death' is null.
+168,cause_of_death,null_required,Required field 'cause_of_death' is null.
+177,cause_of_death,null_required,Required field 'cause_of_death' is null.
+181,cause_of_death,null_required,Required field 'cause_of_death' is null.
+187,cause_of_death,null_required,Required field 'cause_of_death' is null.
+192,cause_of_death,null_required,Required field 'cause_of_death' is null.

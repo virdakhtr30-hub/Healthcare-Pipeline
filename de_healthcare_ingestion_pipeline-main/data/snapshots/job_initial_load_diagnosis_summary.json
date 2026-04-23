@@ -1,0 +1,17 @@
+{
+  "job_id": "job_initial_load_diagnosis",
+  "source_id": "diagnosis_events",
+  "dataset_id": "diagnosis_dataset",
+  "execution_mode": "BATCH",
+  "source_type": "file",
+  "change_capture_mode": "FULL_SNAPSHOT",
+  "input_path": "/opt/project/data/input/diagnosis_events.csv",
+  "accepted_output_path": "/opt/project/data/accepted/diagnosis_events_accepted.jsonl",
+  "quarantine_output_path": "/opt/project/data/quarantine/diagnosis_events_quarantine.csv",
+  "error_report_path": "/opt/project/data/snapshots/diagnosis_events_error_report.csv",
+  "records_total_input": 18996,
+  "records_ingested": 18310,
+  "records_quarantined": 686,
+  "records_rejected": 0,
+  "finished_at": "2026-04-12T01:08:51.555529+00:00"
+}

@@ -1,0 +1,16 @@
+{
+  "job_id": "job_stream_vitals_burst",
+  "source_id": "simulated_vitals_stream",
+  "dataset_id": "vitals_stream_dataset",
+  "execution_mode": "STREAMING",
+  "records_ingested": 4979,
+  "records_failed": 21,
+  "ingestion_latency_seconds": 39849996.406524755,
+  "processing_lag_seconds": 7930508.286273,
+  "throughput_rps": 882.774583031688,
+  "file_count_per_partition": null,
+  "snapshot_count": null,
+  "compaction_lag_seconds": null,
+  "started_at": "2026-04-12T01:10:16.646938+00:00",
+  "ended_at": "2026-04-12T01:10:22.287092+00:00"
+}

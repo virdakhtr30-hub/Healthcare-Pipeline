@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-04-12T01:10:26.914032+00:00",
+  "job_count": 12,
+  "total_records_ingested": 104507,
+  "total_records_failed": 2029,
+  "avg_ingestion_latency_seconds": 26608428.309091683,
+  "avg_processing_lag_seconds": 5100327.753566833,
+  "avg_throughput_rps": 4223.085213106664,
+  "max_ingestion_latency_job": {
+    "job_id": "job_stream_vitals_steady",
+    "ingestion_latency_seconds": 40707504.60847965
+  },
+  "max_failure_job": {
+    "job_id": "job_initial_load_labs",
+    "records_failed": 1208
+  }
+}

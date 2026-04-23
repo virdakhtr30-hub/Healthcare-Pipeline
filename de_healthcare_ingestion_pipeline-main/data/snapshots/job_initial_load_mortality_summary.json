@@ -1,0 +1,17 @@
+{
+  "job_id": "job_initial_load_mortality",
+  "source_id": "mortality_registry",
+  "dataset_id": "mortality_dataset",
+  "execution_mode": "BATCH",
+  "source_type": "file",
+  "change_capture_mode": "FULL_SNAPSHOT",
+  "input_path": "/opt/project/data/input/mortality_registry.csv",
+  "accepted_output_path": "/opt/project/data/accepted/mortality_registry_accepted.jsonl",
+  "quarantine_output_path": "/opt/project/data/quarantine/mortality_registry_quarantine.csv",
+  "error_report_path": "/opt/project/data/snapshots/mortality_registry_error_report.csv",
+  "records_total_input": 202,
+  "records_ingested": 187,
+  "records_quarantined": 15,
+  "records_rejected": 0,
+  "finished_at": "2026-04-12T01:09:38.896693+00:00"
+}

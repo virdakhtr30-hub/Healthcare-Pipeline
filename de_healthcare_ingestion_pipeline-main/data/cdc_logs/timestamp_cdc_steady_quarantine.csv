@@ -1,0 +1,2 @@
+event_id,encounter_id,event_timestamp,heart_rate,respiratory_rate,spo2,sbp,dbp,signal_quality,device_status,source_timestamp,last_updated_at,operation_type
+EVT000000259,ENC0000606,2025-07-16 19:21:57+00:00,64.44860683941091,18.70673419756896,86.819909164027,119.3325060410381,67.44622659588786,FAIR,,2024-03-03 09:48:16+00:00,2024-02-12 18:26:01.629420+00:00,INSERT

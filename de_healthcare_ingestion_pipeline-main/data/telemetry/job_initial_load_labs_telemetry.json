@@ -1,0 +1,16 @@
+{
+  "job_id": "job_initial_load_labs",
+  "source_id": "lab_results",
+  "dataset_id": "lab_results_dataset",
+  "execution_mode": "BATCH",
+  "records_ingested": 55962,
+  "records_failed": 1208,
+  "ingestion_latency_seconds": 40323047.37694588,
+  "processing_lag_seconds": 6537262.051275,
+  "throughput_rps": 1186.8503134949233,
+  "file_count_per_partition": null,
+  "snapshot_count": null,
+  "compaction_lag_seconds": null,
+  "started_at": "2026-04-12T01:08:51.562523+00:00",
+  "ended_at": "2026-04-12T01:09:38.747525+00:00"
+}

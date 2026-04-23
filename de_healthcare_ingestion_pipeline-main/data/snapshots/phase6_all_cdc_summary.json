@@ -1,0 +1,49 @@
+{
+  "generated_at": "2026-04-12T01:10:25.133043+00:00",
+  "summaries": [
+    {
+      "job_id": "job_timestamp_cdc_vitals",
+      "strategy": "timestamp_cdc",
+      "message": "No new rows found beyond watermark.",
+      "last_watermark": "2025-12-30 23:07:18+00:00",
+      "finished_at": "2026-04-12T01:10:24.564564+00:00"
+    },
+    {
+      "job_id": "job_trigger_cdc",
+      "strategy": "trigger_cdc",
+      "message": "No new trigger events found.",
+      "last_offset": 299,
+      "finished_at": "2026-04-12T01:10:24.583325+00:00"
+    },
+    {
+      "job_id": "job_log_cdc",
+      "strategy": "log_cdc",
+      "message": "Koi naya WAL entry nahi mila",
+      "last_log_position": 5299,
+      "finished_at": "2026-04-12T01:10:24.602584+00:00"
+    },
+    {
+      "job_id": "job_timestamp_cdc_vitals",
+      "strategy": "timestamp_cdc",
+      "message": "No new rows found beyond watermark.",
+      "last_watermark": "2026-01-10 06:15:11+00:00",
+      "finished_at": "2026-04-12T01:10:24.625877+00:00"
+    },
+    {
+      "job_id": "job_trigger_cdc",
+      "strategy": "trigger_cdc",
+      "message": "No new trigger events found.",
+      "last_offset": 4999,
+      "finished_at": "2026-04-12T01:10:24.889765+00:00"
+    },
+    {
+      "job_id": "job_log_cdc",
+      "strategy": "log_cdc",
+      "message": "Koi naya WAL entry nahi mila",
+      "last_log_position": 9999,
+      "finished_at": "2026-04-12T01:10:25.130849+00:00"
+    }
+  ],
+  "steady_input_path": "/opt/project/data/synthetic/simulated_vitals_stream_phase6_steady.csv",
+  "burst_input_path": "/opt/project/data/synthetic/simulated_vitals_stream_phase6_burst.csv"
+}

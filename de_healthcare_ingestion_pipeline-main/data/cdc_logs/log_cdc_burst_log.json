@@ -1,0 +1,17 @@
+{
+  "job_id": "job_log_cdc",
+  "strategy": "log_cdc",
+  "source_id": "simulated_vitals_stream",
+  "table_name": "simulated_vitals_stream",
+  "previous_log_position": -1,
+  "new_log_position": 9999,
+  "wal_entries_read": 5000,
+  "inserts": 2976,
+  "updates": 1521,
+  "deletes": 503,
+  "events_emitted": 5000,
+  "committed": 5000,
+  "quarantined": 21,
+  "last_txn_id": "txn_82ce0989",
+  "run_at": "2026-04-11T23:27:43.303169+00:00"
+}

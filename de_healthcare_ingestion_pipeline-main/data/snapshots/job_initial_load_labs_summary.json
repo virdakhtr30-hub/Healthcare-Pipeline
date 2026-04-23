@@ -1,0 +1,17 @@
+{
+  "job_id": "job_initial_load_labs",
+  "source_id": "lab_results",
+  "dataset_id": "lab_results_dataset",
+  "execution_mode": "BATCH",
+  "source_type": "file",
+  "change_capture_mode": "FULL_SNAPSHOT",
+  "input_path": "/opt/project/data/input/lab_results.csv",
+  "accepted_output_path": "/opt/project/data/accepted/lab_results_accepted.jsonl",
+  "quarantine_output_path": "/opt/project/data/quarantine/lab_results_quarantine.csv",
+  "error_report_path": "/opt/project/data/snapshots/lab_results_error_report.csv",
+  "records_total_input": 57170,
+  "records_ingested": 55962,
+  "records_quarantined": 1208,
+  "records_rejected": 0,
+  "finished_at": "2026-04-12T01:09:38.822793+00:00"
+}

@@ -1,0 +1,39 @@
+encounter_dataset:
+  dataset_id: encounter_dataset
+  domain: healthcare
+  classification_level: confidential
+  schema_version: v1
+  retention_policy: 1_year
+  description: Curated encounter-level ingestion dataset
+
+diagnosis_dataset:
+  dataset_id: diagnosis_dataset
+  domain: healthcare
+  classification_level: confidential
+  schema_version: v1
+  retention_policy: 1_year
+  description: Curated diagnosis events dataset
+
+lab_results_dataset:
+  dataset_id: lab_results_dataset
+  domain: healthcare
+  classification_level: confidential
+  schema_version: v1
+  retention_policy: 1_year
+  description: Curated laboratory results dataset
+
+mortality_dataset:
+  dataset_id: mortality_dataset
+  domain: healthcare
+  classification_level: restricted
+  schema_version: v1
+  retention_policy: 7_years
+  description: Curated mortality registry dataset
+
+vitals_stream_dataset:
+  dataset_id: vitals_stream_dataset
+  domain: healthcare
+  classification_level: confidential
+  schema_version: v1
+  retention_policy: 90_days
+  description: Curated streaming vitals dataset

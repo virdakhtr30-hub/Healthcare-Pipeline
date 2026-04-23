@@ -1,0 +1,6 @@
+{
+  "last_offset": 4979,
+  "last_watermark": "2026-01-10 06:15:11+00:00",
+  "saved_at": "2026-04-11T23:27:29.297711+00:00",
+  "strategy": "timestamp_cdc"
+}

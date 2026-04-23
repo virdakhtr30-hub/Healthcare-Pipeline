@@ -1,0 +1,103 @@
+job_initial_load_encounter:
+  job_id: job_initial_load_encounter
+  dataset_id: encounter_dataset
+  source_id: encounter_master
+  execution_mode: BATCH
+  schedule: null
+  owner: drsawerahanif
+
+job_initial_load_diagnosis:
+  job_id: job_initial_load_diagnosis
+  dataset_id: diagnosis_dataset
+  source_id: diagnosis_events
+  execution_mode: BATCH
+  schedule: null
+  owner: drsawerahanif
+
+job_initial_load_labs:
+  job_id: job_initial_load_labs
+  dataset_id: lab_results_dataset
+  source_id: lab_results
+  execution_mode: BATCH
+  schedule: null
+  owner: drsawerahanif
+
+job_initial_load_mortality:
+  job_id: job_initial_load_mortality
+  dataset_id: mortality_dataset
+  source_id: mortality_registry
+  execution_mode: BATCH
+  schedule: null
+  owner: drsawerahanif
+
+job_stream_vitals_steady:
+  job_id: job_stream_vitals_steady
+  dataset_id: vitals_stream_dataset
+  source_id: simulated_vitals_stream
+  execution_mode: STREAMING
+  schedule: steady_10_records_per_second
+  owner: drsawerahanif
+
+job_stream_vitals_burst:
+  job_id: job_stream_vitals_burst
+  dataset_id: vitals_stream_dataset
+  source_id: simulated_vitals_stream
+  execution_mode: STREAMING
+  schedule: burst_5000_records_1_second
+  owner: drsawerahanif
+
+job_timestamp_cdc_encounter:
+  job_id: job_timestamp_cdc_encounter
+  dataset_id: encounter_dataset
+  source_id: encounter_master
+  execution_mode: CDC_CONTINUOUS
+  schedule: null
+  owner: drsawerahanif
+
+job_timestamp_cdc_diagnosis:
+  job_id: job_timestamp_cdc_diagnosis
+  dataset_id: diagnosis_dataset
+  source_id: diagnosis_events
+  execution_mode: CDC_CONTINUOUS
+  schedule: null
+  owner: drsawerahanif
+
+job_timestamp_cdc_labs:
+  job_id: job_timestamp_cdc_labs
+  dataset_id: lab_results_dataset
+  source_id: lab_results
+  execution_mode: CDC_CONTINUOUS
+  schedule: null
+  owner: drsawerahanif
+
+job_timestamp_cdc_mortality:
+  job_id: job_timestamp_cdc_mortality
+  dataset_id: mortality_dataset
+  source_id: mortality_registry
+  execution_mode: CDC_CONTINUOUS
+  schedule: null
+  owner: drsawerahanif
+
+job_timestamp_cdc_vitals:
+  job_id: job_timestamp_cdc_vitals
+  dataset_id: vitals_stream_dataset
+  source_id: simulated_vitals_stream
+  execution_mode: CDC_CONTINUOUS
+  schedule: null
+  owner: drsawerahanif
+
+job_trigger_cdc:
+  job_id: job_trigger_cdc
+  dataset_id: vitals_stream_dataset
+  source_id: simulated_vitals_stream
+  execution_mode: CDC_CONTINUOUS
+  schedule: null
+  owner: drsawerahanif
+
+job_log_cdc:
+  job_id: job_log_cdc
+  dataset_id: vitals_stream_dataset
+  source_id: simulated_vitals_stream
+  execution_mode: CDC_CONTINUOUS
+  schedule: null
+  owner: virdaakhtar

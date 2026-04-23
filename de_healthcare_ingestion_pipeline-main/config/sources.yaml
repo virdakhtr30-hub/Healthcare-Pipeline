@@ -1,0 +1,49 @@
+encounter_master:
+  source_id: encounter_master
+  source_type: file
+  extraction_mode: query_based
+  change_capture_mode: FULL_SNAPSHOT
+  expected_schema: {}
+  ingestion_frequency: daily
+  primary_key: ["encounter_id"]
+  watermark_column: last_updated_at
+
+diagnosis_events:
+  source_id: diagnosis_events
+  source_type: file
+  extraction_mode: query_based
+  change_capture_mode: FULL_SNAPSHOT
+  expected_schema: {}
+  ingestion_frequency: daily
+  primary_key: ["diagnosis_id"]
+  watermark_column: last_updated_at
+
+lab_results:
+  source_id: lab_results
+  source_type: file
+  extraction_mode: query_based
+  change_capture_mode: FULL_SNAPSHOT
+  expected_schema: {}
+  ingestion_frequency: hourly
+  primary_key: ["lab_result_id"]
+  watermark_column: last_updated_at
+
+mortality_registry:
+  source_id: mortality_registry
+  source_type: file
+  extraction_mode: query_based
+  change_capture_mode: FULL_SNAPSHOT
+  expected_schema: {}
+  ingestion_frequency: daily
+  primary_key: ["death_record_id"]
+  watermark_column: last_updated_at
+
+simulated_vitals_stream:
+  source_id: simulated_vitals_stream
+  source_type: stream
+  extraction_mode: push
+  change_capture_mode: STREAM_EVENT
+  expected_schema: {}
+  ingestion_frequency: real-time
+  primary_key: ["event_id"]
+  watermark_column: source_timestamp
