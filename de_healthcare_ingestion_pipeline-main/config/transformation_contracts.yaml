@@ -1,0 +1,114 @@
+use_case:
+  name: real_time_patient_risk_and_operational_monitoring
+  business_problem: >
+    Combine historical batch healthcare records and live streaming vitals
+    to monitor patient deterioration risk and operational workload.
+  batch_sources:
+    - encounter_master
+    - diagnosis_events
+    - lab_results
+    - mortality_registry
+  streaming_sources:
+    - simulated_vitals_stream
+  expected_outputs:
+    - gold_patient_risk_daily
+    - gold_operational_monitoring
+
+bronze_contract:
+  purpose: Raw governed storage.
+  allowed_transformations:
+    - preserve_raw_payload
+    - add_event_metadata
+    - add_ingestion_timestamp
+    - add_partition_columns
+  disallowed_transformations:
+    - business_aggregation
+    - heavy_cleaning
+    - dropping_valid_source_columns
+
+silver_contract:
+  purpose: Cleaned, standardized, analytics-ready intermediate data.
+  required_transformations:
+    - schema_validation
+    - type_casting
+    - null_handling
+    - deduplication
+    - timestamp_standardization
+    - categorical_standardization
+    - cdc_conflict_resolution
+    - late_arriving_event_detection
+    - out_of_order_event_detection
+  quality_rules:
+    primary_keys_must_not_be_null: true
+    timestamps_must_be_parseable: true
+    duplicate_records_should_be_removed: true
+    invalid_numeric_ranges_should_be_flagged: true
+    invalid_required_fields_should_be_rejected: true
+
+gold_contract:
+  purpose: Business-ready analytical outputs.
+  required_transformations:
+    - patient_level_aggregation
+    - operational_hourly_aggregation
+    - abnormal_vitals_count
+    - abnormal_lab_count
+    - risk_score_calculation
+    - risk_band_assignment
+    - metric_drift_calculation
+  business_rules:
+    risk_score_range:
+      min: 0
+      max: 100
+    risk_bands:
+      low: "0-39"
+      medium: "40-69"
+      high: "70-100"
+    abnormal_vitals_examples:
+      heart_rate_high: 120
+      heart_rate_low: 50
+      spo2_low: 92
+      respiratory_rate_high: 24
+      temperature_high: 38.0
+
+transformation_kpis:
+  data_quality:
+    - records_cleaned
+    - records_rejected
+    - null_percentage_per_column
+    - schema_violation_count
+  efficiency:
+    - transformation_latency_seconds
+    - records_transformed_per_second
+    - pipeline_stage_latency
+  deduplication:
+    - duplicate_records_detected
+    - duplicate_removal_rate
+  cdc_consistency:
+    - late_arriving_records
+    - out_of_order_events
+    - correction_updates_applied
+  business_level:
+    - aggregation_accuracy
+    - metric_drift
+
+storage_kpis:
+  file_level:
+    - file_count_per_partition
+    - avg_file_size
+    - small_file_ratio
+  snapshot:
+    - snapshot_count
+    - snapshot_creation_rate
+    - time_travel_latency
+  efficiency:
+    - total_storage_size
+    - data_vs_metadata_ratio
+    - compression_ratio
+  compaction:
+    - compaction_lag
+    - files_compacted_per_run
+    - compaction_time
+  partition_health:
+    - partition_skew
+    - records_per_partition
+    - hot_partition_detection

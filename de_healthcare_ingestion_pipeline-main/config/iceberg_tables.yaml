@@ -1,0 +1,155 @@
+project:
+  name: de_healthcare_part2
+  use_case: real_time_patient_risk_and_operational_monitoring
+  storage_strategy: iceberg_style_lakehouse
+  description: >
+    Stores batch, streaming, and CDC healthcare data into Bronze, Silver,
+    and Gold Iceberg-style tables for patient risk and operational monitoring.
+
+schema_evolution_policy:
+  allow_additive_columns: true
+  allow_nullable_new_columns: true
+  disallow_required_column_removal: true
+  disallow_primary_key_type_change: true
+  require_schema_version_increment: true
+  violation_action: quarantine_and_log
+
+default_storage_policy:
+  file_format: parquet
+  compression: snappy
+  snapshot_retention:
+    max_snapshots: 10
+    retention_days: 7
+  compaction_policy:
+    small_file_threshold_mb: 1
+    target_file_size_mb: 16
+    frequency: every_pipeline_run
+
+bronze_tables:
+  - table_id: bronze_encounter_master
+    dataset_id: encounter_dataset
+    source_id: encounter_master
+    table_layer: BRONZE
+    partition_spec:
+      - ingestion_date
+    primary_key:
+      - encounter_id
+    file_format: parquet
+    description: Raw governed encounter records.
+
+  - table_id: bronze_diagnosis_events
+    dataset_id: diagnosis_dataset
+    source_id: diagnosis_events
+    table_layer: BRONZE
+    partition_spec:
+      - ingestion_date
+    primary_key:
+      - diagnosis_id
+    file_format: parquet
+    description: Raw governed diagnosis events.
+
+  - table_id: bronze_lab_results
+    dataset_id: lab_results_dataset
+    source_id: lab_results
+    table_layer: BRONZE
+    partition_spec:
+      - ingestion_date
+    primary_key:
+      - lab_result_id
+    file_format: parquet
+    description: Raw governed laboratory results.
+
+  - table_id: bronze_mortality_registry
+    dataset_id: mortality_dataset
+    source_id: mortality_registry
+    table_layer: BRONZE
+    partition_spec:
+      - ingestion_date
+    primary_key:
+      - patient_id
+    file_format: parquet
+    description: Raw governed mortality records.
+
+  - table_id: bronze_vitals_stream
+    dataset_id: vitals_stream_dataset
+    source_id: simulated_vitals_stream
+    table_layer: BRONZE
+    partition_spec:
+      - event_date
+      - event_hour
+    primary_key:
+      - event_id
+    file_format: parquet
+    description: Raw streaming vitals events with CDC operation metadata.
+
+silver_tables:
+  - table_id: silver_encounters
+    table_layer: SILVER
+    source_tables:
+      - bronze_encounter_master
+    partition_spec:
+      - event_date
+    description: Cleaned and deduplicated encounter records.
+
+  - table_id: silver_diagnoses
+    table_layer: SILVER
+    source_tables:
+      - bronze_diagnosis_events
+    partition_spec:
+      - event_date
+    description: Standardized diagnosis records.
+
+  - table_id: silver_labs
+    table_layer: SILVER
+    source_tables:
+      - bronze_lab_results
+    partition_spec:
+      - event_date
+    description: Cleaned lab results with abnormality flags.
+
+  - table_id: silver_mortality
+    table_layer: SILVER
+    source_tables:
+      - bronze_mortality_registry
+    partition_spec:
+      - event_date
+    description: Cleaned mortality indicators.
+
+  - table_id: silver_vitals
+    table_layer: SILVER
+    source_tables:
+      - bronze_vitals_stream
+    partition_spec:
+      - event_date
+      - event_hour
+    description: Cleaned streaming vitals with late and out-of-order event flags.
+
+  - table_id: silver_patient_monitoring_base
+    table_layer: SILVER
+    source_tables:
+      - silver_encounters
+      - silver_diagnoses
+      - silver_labs
+      - silver_mortality
+      - silver_vitals
+    partition_spec:
+      - event_date
+    description: Integrated patient monitoring base table combining batch and streaming data.
+
+gold_tables:
+  - table_id: gold_patient_risk_daily
+    table_layer: GOLD
+    source_tables:
+      - silver_patient_monitoring_base
+    partition_spec:
+      - event_date
+    description: Daily patient risk summary for analytical reporting.
+
+  - table_id: gold_operational_monitoring
+    table_layer: GOLD
+    source_tables:
+      - silver_patient_monitoring_base
+    partition_spec:
+      - event_date
+      - event_hour
+    description: Operational monitoring KPIs for dashboarding.
