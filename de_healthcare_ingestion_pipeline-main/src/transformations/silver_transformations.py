@@ -11,7 +11,7 @@ class SilverTransformer:
 
     def _read_bronze_table(self, table_id: str) -> pd.DataFrame:
         table_path = Path("data/iceberg_warehouse/bronze") / table_id / "data"
-        files = list(table_path.rglob("*.parquet"))
+        files = [f for f in table_path.rglob("*.parquet") if not f.name.startswith(".")]
 
         if not files:
             return pd.DataFrame()
