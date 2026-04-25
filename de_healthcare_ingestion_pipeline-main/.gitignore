@@ -27,3 +27,9 @@ airflow_local/logs/
 # Optional local cache
 .cache/__pycache__/
 *.pyc
+
+
+# Part 2 generated outputs
+data/iceberg_warehouse/
+data/transformation_metrics/
+*.parquet
