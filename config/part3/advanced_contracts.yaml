@@ -1,0 +1,149 @@
+datasets:
+
+  encounter_master:
+    structural_contract:
+      primary_key: encounter_id
+      partition_keys:
+        - ingestion_date
+
+      required_fields:
+        - encounter_id
+        - patient_id
+        - admit_datetime
+        - age
+        - gender
+
+      datatypes:
+        encounter_id: string
+        patient_id: string
+        admit_datetime: datetime
+        discharge_datetime: datetime
+        age: integer
+        gender: string
+        expired_flag: integer
+        los_days: integer
+
+    semantic_contract:
+      rules:
+        - "age >= 0"
+        - "los_days >= 0"
+        - "gender IN (Male, Female)"
+        - "expired_flag IN (0,1)"
+
+    freshness_contract:
+      max_delay_minutes: 5
+      quarantine_rule: >
+        Records delayed more than 5 minutes are quarantined for inspection.
+
+    lineage_contract:
+      lineage:
+        - source_system
+        - bronze_encounter_master
+        - silver_encounters
+        - gold_patient_risk_daily
+        - dashboard
+
+
+  diagnosis_events:
+    structural_contract:
+      primary_key: diagnosis_event_id
+      partition_keys:
+        - ingestion_date
+
+      required_fields:
+        - diagnosis_event_id
+        - patient_id
+        - diagnosis_code
+
+      datatypes:
+        diagnosis_event_id: string
+        patient_id: string
+        diagnosis_code: string
+        diagnosis_description: string
+
+    semantic_contract:
+      rules:
+        - "diagnosis_code IS NOT NULL"
+
+    freshness_contract:
+      max_delay_minutes: 10
+
+    lineage_contract:
+      lineage:
+        - source_system
+        - bronze_diagnosis_events
+        - silver_diagnosis
+        - gold_patient_risk_daily
+        - dashboard
+
+
+  lab_results:
+    structural_contract:
+      primary_key: lab_result_id
+      partition_keys:
+        - ingestion_date
+
+      required_fields:
+        - lab_result_id
+        - patient_id
+        - lab_test_name
+        - result_value
+
+      datatypes:
+        lab_result_id: string
+        patient_id: string
+        lab_test_name: string
+        result_value: float
+
+    semantic_contract:
+      rules:
+        - "result_value >= 0"
+
+    freshness_contract:
+      max_delay_minutes: 5
+
+    lineage_contract:
+      lineage:
+        - source_system
+        - bronze_lab_results
+        - silver_lab_results
+        - gold_patient_risk_daily
+        - dashboard
+
+
+  simulated_vitals_stream:
+    structural_contract:
+      primary_key: event_id
+      partition_keys:
+        - event_date
+        - event_hour
+
+      required_fields:
+        - event_id
+        - patient_id
+        - heart_rate
+        - oxygen_saturation
+
+      datatypes:
+        event_id: string
+        patient_id: string
+        heart_rate: integer
+        oxygen_saturation: integer
+
+    semantic_contract:
+      rules:
+        - "heart_rate BETWEEN 20 AND 220"
+        - "oxygen_saturation BETWEEN 50 AND 100"
+
+    freshness_contract:
+      max_delay_minutes: 2
+      quarantine_rule: >
+        Streaming events delayed more than 2 minutes are quarantined.
+
+    lineage_contract:
+      lineage:
+        - streaming_source
+        - bronze_vitals_stream
+        - silver_vitals
+        - gold_operational_monitoring
+        - dashboard
