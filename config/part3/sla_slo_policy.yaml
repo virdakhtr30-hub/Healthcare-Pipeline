@@ -1,0 +1,10 @@
+sla_policies:
+  ingestion_latency_minutes: 5
+  dashboard_refresh_minutes: 5
+  max_query_latency_seconds: 3
+  max_stream_delay_minutes: 2
+
+slo_targets:
+  pipeline_success_rate: 99.0
+  data_quality_accuracy: 98.0
+  dashboard_availability: 99.5

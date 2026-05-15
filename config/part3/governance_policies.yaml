@@ -1,0 +1,67 @@
+data_access:
+  policy_1:
+    name: "Restricted PII Access"
+    description: >
+      Personally identifiable patient data can only be accessed by authorized healthcare administrators.
+      Analysts and BI users are restricted to aggregated Gold-layer datasets.
+
+  policy_2:
+    name: "Streaming Visibility Window"
+    description: >
+      Real-time vitals streaming data remains accessible for operational monitoring for 24 hours only.
+      After 24 hours, only aggregated summaries remain available.
+
+retention:
+  policy_1:
+    name: "Bronze Retention"
+    description: >
+      Bronze raw ingested data is retained for 30 days for audit and replay purposes.
+
+  policy_2:
+    name: "Silver and Gold Retention"
+    description: >
+      Silver transformed datasets are retained for 1 year while Gold business datasets are retained indefinitely.
+
+cost_governance:
+  policy_1:
+    name: "Expensive Query Restriction"
+    description: >
+      Resource-intensive joins and full historical scans are restricted during business hours.
+
+  policy_2:
+    name: "Streaming Optimization"
+    description: >
+      Streaming compaction frequency is optimized to reduce excessive small file creation and storage overhead.
+
+workload_isolation:
+  policy_1:
+    name: "Dedicated BI Resources"
+    description: >
+      Separate resources are allocated for BI dashboards to prevent dashboard latency caused by ingestion workloads.
+
+  policy_2:
+    name: "CDC and Streaming Isolation"
+    description: >
+      Streaming ingestion and CDC processing workloads are isolated from analytical workloads to maintain stability.
+
+schema_evolution:
+  policy_1:
+    name: "Additive Changes Allowed"
+    description: >
+      New nullable columns may be added without breaking downstream transformations.
+
+  policy_2:
+    name: "Breaking Changes Controlled"
+    description: >
+      Breaking schema changes require version increment and validation testing before deployment.
+
+data_quality_slas:
+  policy_1:
+    name: "Null Percentage SLA"
+    description: >
+      Null percentage for critical columns must remain below 2%.
+
+  policy_2:
+    name: "Dashboard Freshness SLA"
+    description: >
+      Gold dashboards must refresh within 5 minutes after successful pipeline execution.
