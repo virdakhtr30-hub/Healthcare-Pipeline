@@ -1,0 +1,42 @@
+operational_queries:
+  complexity: low_to_medium
+  characteristics:
+    - low_latency
+    - partition_pruning
+    - aggregations
+  optimization:
+    - partitioning
+    - parquet_pushdown
+    - caching
+
+strategic_queries:
+  complexity: analytical
+  characteristics:
+    - historical_analysis
+    - large_aggregations
+    - trend_analysis
+  optimization:
+    - partitioning
+    - materialized_views
+    - snapshot_queries
+
+executive_bi_queries:
+  complexity: medium
+  characteristics:
+    - dashboard_kpis
+    - star_schema_style
+    - aggregated_metrics
+  optimization:
+    - caching
+    - precomputed_gold_tables
+
+ad_hoc_queries:
+  complexity: resource_intensive
+  characteristics:
+    - exploratory_analysis
+    - investigative_queries
+    - dynamic_filters
+  optimization:
+    - partition_pruning
+    - compaction
+    - query_caching
