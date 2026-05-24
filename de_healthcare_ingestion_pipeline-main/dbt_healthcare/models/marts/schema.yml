@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: mart_patient_risk_summary
+    description: "Gold-level semantic mart for patient risk dashboard KPIs."
+    columns:
+      - name: event_date
+        tests:
+          - not_null
+      - name: total_patient_records
+        tests:
+          - not_null
+      - name: avg_patient_risk_score
+        tests:
+          - not_null
+      - name: high_risk_patient_count
+        tests:
+          - not_null
+
+  - name: mart_operational_summary
+    description: "Gold-level semantic mart for operational monitoring KPIs."
+    columns:
+      - name: event_date
+        tests:
+          - not_null
+      - name: total_operational_events
+        tests:
+          - not_null

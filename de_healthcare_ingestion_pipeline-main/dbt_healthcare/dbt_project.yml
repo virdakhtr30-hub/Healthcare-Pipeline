@@ -1,0 +1,16 @@
+name: healthcare_semantic_platform
+version: '1.0.0'
+config-version: 2
+
+profile: healthcare_semantic_platform
+
+model-paths: ["models"]
+
+models:
+  healthcare_semantic_platform:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: view
+    marts:
+      +materialized: table

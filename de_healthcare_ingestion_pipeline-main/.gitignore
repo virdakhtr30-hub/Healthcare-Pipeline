@@ -33,3 +33,9 @@ airflow_local/logs/
 data/iceberg_warehouse/
 data/transformation_metrics/
 *.parquet
+
+
+# dbt generated files
+dbt_healthcare/target/
+dbt_healthcare/dbt_packages/
+dbt_healthcare/logs/

@@ -1,0 +1,26 @@
+version: 2
+
+semantic_metrics:
+  - name: total_patient_records
+    label: Total Patient Records
+    type: simple
+    description: Count of patient records available for dashboard analysis.
+    sql: total_patient_records
+
+  - name: avg_patient_risk_score
+    label: Average Patient Risk Score
+    type: simple
+    description: Average risk score across monitored patient records.
+    sql: avg_patient_risk_score
+
+  - name: high_risk_patient_count
+    label: High-Risk Patient Count
+    type: simple
+    description: Count of patient records classified as high risk.
+    sql: high_risk_patient_count
+
+  - name: total_operational_events
+    label: Total Operational Events
+    type: simple
+    description: Total operational monitoring events processed.
+    sql: total_operational_events

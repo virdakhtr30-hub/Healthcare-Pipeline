@@ -1,0 +1,7 @@
+healthcare_semantic_platform:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "../data/healthcare_semantic.duckdb"
+      threads: 4
