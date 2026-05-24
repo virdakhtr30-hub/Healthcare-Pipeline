@@ -1,0 +1,98 @@
+[
+  {
+    "query_id": "operational_query_1",
+    "category": "operational",
+    "status": "success",
+    "latency_seconds": 5.895,
+    "rows_returned": 1,
+    "error": null,
+    "executed_at": "2026-05-24T08:15:16.724472+00:00",
+    "bytes_scanned_estimate_mb": 14.7376,
+    "partition_pruning_used": true,
+    "snapshot_scan_count": 1
+  },
+  {
+    "query_id": "operational_query_2",
+    "category": "operational",
+    "status": "success",
+    "latency_seconds": 0.6713,
+    "rows_returned": 732,
+    "error": null,
+    "executed_at": "2026-05-24T08:15:17.395839+00:00",
+    "bytes_scanned_estimate_mb": 1.6783,
+    "partition_pruning_used": true,
+    "snapshot_scan_count": 1
+  },
+  {
+    "query_id": "strategic_query_1",
+    "category": "strategic",
+    "status": "success",
+    "latency_seconds": 0.5288,
+    "rows_returned": 732,
+    "error": null,
+    "executed_at": "2026-05-24T08:15:17.927282+00:00",
+    "bytes_scanned_estimate_mb": 1.322,
+    "partition_pruning_used": true,
+    "snapshot_scan_count": 1
+  },
+  {
+    "query_id": "strategic_query_2",
+    "category": "strategic",
+    "status": "success",
+    "latency_seconds": 0.4919,
+    "rows_returned": 732,
+    "error": null,
+    "executed_at": "2026-05-24T08:15:18.419212+00:00",
+    "bytes_scanned_estimate_mb": 1.2297,
+    "partition_pruning_used": true,
+    "snapshot_scan_count": 1
+  },
+  {
+    "query_id": "executive_bi_query_1",
+    "category": "executive_bi",
+    "status": "success",
+    "latency_seconds": 0.4968,
+    "rows_returned": 1,
+    "error": null,
+    "executed_at": "2026-05-24T08:15:18.917553+00:00",
+    "bytes_scanned_estimate_mb": 1.242,
+    "partition_pruning_used": true,
+    "snapshot_scan_count": 1
+  },
+  {
+    "query_id": "executive_bi_query_2",
+    "category": "executive_bi",
+    "status": "success",
+    "latency_seconds": 0.4503,
+    "rows_returned": 1,
+    "error": null,
+    "executed_at": "2026-05-24T08:15:19.367908+00:00",
+    "bytes_scanned_estimate_mb": 1.1258,
+    "partition_pruning_used": true,
+    "snapshot_scan_count": 1
+  },
+  {
+    "query_id": "ad_hoc_query_1",
+    "category": "ad_hoc",
+    "status": "success",
+    "latency_seconds": 0.496,
+    "rows_returned": 0,
+    "error": null,
+    "executed_at": "2026-05-24T08:15:19.864525+00:00",
+    "bytes_scanned_estimate_mb": 1.24,
+    "partition_pruning_used": true,
+    "snapshot_scan_count": 1
+  },
+  {
+    "query_id": "ad_hoc_query_2",
+    "category": "ad_hoc",
+    "status": "success",
+    "latency_seconds": 0.5127,
+    "rows_returned": 1,
+    "error": null,
+    "executed_at": "2026-05-24T08:15:20.377303+00:00",
+    "bytes_scanned_estimate_mb": 1.2818,
+    "partition_pruning_used": true,
+    "snapshot_scan_count": 1
+  }
+]
