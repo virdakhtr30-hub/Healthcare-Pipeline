@@ -1,0 +1,102 @@
+{
+  "query_performance_kpis": {
+    "avg_query_latency_seconds": 1.1928,
+    "p95_query_latency_seconds": 5.895,
+    "query_failure_rate": 0.0,
+    "concurrent_queries": 1,
+    "query_queue_time_seconds": 0
+  },
+  "sql_workload_kpis": {
+    "top_expensive_queries": [
+      {
+        "query_id": "operational_query_1",
+        "category": "operational",
+        "status": "success",
+        "latency_seconds": 5.895,
+        "rows_returned": 1,
+        "error": null,
+        "executed_at": "2026-05-24T08:15:16.724472+00:00",
+        "bytes_scanned_estimate_mb": 14.7376,
+        "partition_pruning_used": true,
+        "snapshot_scan_count": 1
+      },
+      {
+        "query_id": "operational_query_2",
+        "category": "operational",
+        "status": "success",
+        "latency_seconds": 0.6713,
+        "rows_returned": 732,
+        "error": null,
+        "executed_at": "2026-05-24T08:15:17.395839+00:00",
+        "bytes_scanned_estimate_mb": 1.6783,
+        "partition_pruning_used": true,
+        "snapshot_scan_count": 1
+      },
+      {
+        "query_id": "strategic_query_1",
+        "category": "strategic",
+        "status": "success",
+        "latency_seconds": 0.5288,
+        "rows_returned": 732,
+        "error": null,
+        "executed_at": "2026-05-24T08:15:17.927282+00:00",
+        "bytes_scanned_estimate_mb": 1.322,
+        "partition_pruning_used": true,
+        "snapshot_scan_count": 1
+      },
+      {
+        "query_id": "ad_hoc_query_2",
+        "category": "ad_hoc",
+        "status": "success",
+        "latency_seconds": 0.5127,
+        "rows_returned": 1,
+        "error": null,
+        "executed_at": "2026-05-24T08:15:20.377303+00:00",
+        "bytes_scanned_estimate_mb": 1.2818,
+        "partition_pruning_used": true,
+        "snapshot_scan_count": 1
+      },
+      {
+        "query_id": "executive_bi_query_1",
+        "category": "executive_bi",
+        "status": "success",
+        "latency_seconds": 0.4968,
+        "rows_returned": 1,
+        "error": null,
+        "executed_at": "2026-05-24T08:15:18.917553+00:00",
+        "bytes_scanned_estimate_mb": 1.242,
+        "partition_pruning_used": true,
+        "snapshot_scan_count": 1
+      }
+    ],
+    "avg_bytes_scanned_per_query_mb": 2.9821,
+    "partition_pruning_efficiency": 1.0,
+    "snapshot_scan_count": 8
+  },
+  "category_summary": {
+    "operational": {
+      "query_count": 2,
+      "avg_latency_seconds": 3.2832,
+      "failed_queries": 0,
+      "avg_bytes_scanned_mb": 8.208
+    },
+    "strategic": {
+      "query_count": 2,
+      "avg_latency_seconds": 0.5104,
+      "failed_queries": 0,
+      "avg_bytes_scanned_mb": 1.2759
+    },
+    "executive_bi": {
+      "query_count": 2,
+      "avg_latency_seconds": 0.4736,
+      "failed_queries": 0,
+      "avg_bytes_scanned_mb": 1.1839
+    },
+    "ad_hoc": {
+      "query_count": 2,
+      "avg_latency_seconds": 0.5044,
+      "failed_queries": 0,
+      "avg_bytes_scanned_mb": 1.2609
+    }
+  }
+}
