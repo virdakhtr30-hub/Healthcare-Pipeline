@@ -4,4 +4,5 @@ healthcare_semantic_platform:
     dev:
       type: duckdb
       path: "../data/healthcare_semantic.duckdb"
+      schema: main
       threads: 4

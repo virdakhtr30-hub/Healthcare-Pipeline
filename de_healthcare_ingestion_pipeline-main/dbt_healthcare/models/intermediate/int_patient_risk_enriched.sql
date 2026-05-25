@@ -13,3 +13,4 @@ select
         else 0
     end as is_high_risk
 from {{ ref('stg_patient_risk_daily') }}
+

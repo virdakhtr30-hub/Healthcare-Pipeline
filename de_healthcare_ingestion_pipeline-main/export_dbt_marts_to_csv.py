@@ -27,6 +27,7 @@ def main():
 
     export_table(con, "mart_patient_risk_summary")
     export_table(con, "mart_operational_summary")
+    export_table(con, "mart_healthcare_bi_summary")
 
     con.close()
     print("dbt semantic marts exported successfully.")
