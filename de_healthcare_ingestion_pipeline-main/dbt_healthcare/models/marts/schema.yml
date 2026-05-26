@@ -1,28 +1,83 @@
+# version: 2
+
+# models:
+#   - name: mart_patient_risk_summary
+#     description: "Gold-level semantic mart for patient risk dashboard KPIs."
+#     columns:
+#       - name: event_date
+#         tests:
+#           - not_null
+#       - name: total_patient_records
+#         tests:
+#           - not_null
+#       - name: avg_patient_risk_score
+#         tests:
+#           - not_null
+#       - name: high_risk_patient_count
+#         tests:
+#           - not_null
+
+#   - name: mart_operational_summary
+#     description: "Gold-level semantic mart for operational monitoring KPIs."
+#     columns:
+#       - name: event_date
+#         tests:
+#           - not_null
+#       - name: total_operational_events
+#         tests:
+#           - not_null
+
+
 version: 2
 
 models:
-  - name: mart_patient_risk_summary
-    description: "Gold-level semantic mart for patient risk dashboard KPIs."
+  - name: mart_operational_summary
+    description: "Gold mart for operational monitoring metrics."
     columns:
       - name: event_date
         tests:
           - not_null
-      - name: total_patient_records
-        tests:
-          - not_null
-      - name: avg_patient_risk_score
-        tests:
-          - not_null
-      - name: high_risk_patient_count
+      - name: monitoring_events
         tests:
           - not_null
 
-  - name: mart_operational_summary
-    description: "Gold-level semantic mart for operational monitoring KPIs."
+  - name: mart_patient_risk_summary
+    description: "Gold mart for patient risk and monitoring metrics."
     columns:
       - name: event_date
         tests:
           - not_null
-      - name: total_operational_events
+      - name: monitored_patients
+        tests:
+          - not_null
+      - name: avg_risk_score
+        tests:
+          - not_null
+      - name: high_risk_monitoring_load
+        tests:
+          - not_null
+
+  - name: mart_healthcare_bi_summary
+    description: "Healthcare BI semantic mart combining encounters, vitals, labs, diagnoses, and mortality metrics."
+    columns:
+      - name: month
+        tests:
+          - not_null
+      - name: patient_encounters
+        tests:
+          - not_null
+      - name: monitored_patients
+        tests:
+          - not_null
+      - name: avg_length_of_stay
+        tests:
+          - not_null
+      - name: abnormal_vital_events
+        tests:
+          - not_null
+      - name: mortality_cases
+        tests:
+          - not_null
+      - name: clinical_workload_index
         tests:
           - not_null
